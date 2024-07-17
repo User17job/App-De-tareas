@@ -229,7 +229,6 @@ figure .img{
   border: solid;
   color:rgb(121, 121, 166);
   padding:3px 0px;
-
 }
 
 #delete:hover{
@@ -242,7 +241,8 @@ figure .img{
 button {
   position: relative;
   width: fit-content;
-  min-width: 40px;
+  min-width: 20px;
+  height: 20px;
   padding: 8px;
   border-radius: 5px;
   box-shadow: 0px 0px 20px -20px;
@@ -396,6 +396,13 @@ button:active {
 #onoff:checked #light-on{
     display: none;
 }
+
+
+
+
+
+
+
 .check {
   cursor: pointer;
   position: relative;

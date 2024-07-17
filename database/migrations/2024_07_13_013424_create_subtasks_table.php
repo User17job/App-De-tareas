@@ -10,7 +10,7 @@ class CreateSubtasksTable extends Migration
     {
         Schema::create('subtasks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('todolist_id')->constrained('todolists')->onDelete('cascade');
+            // $table->foreignId('todolist_id')->constrained('todolists')->onDelete('cascade');
             $table->string('subtarea');
             $table->boolean('complete')->default(false);
             $table->timestamps();

@@ -38,14 +38,14 @@ class SubtaskController extends Controller
     return redirect()->back();
     }
 
-    // Marcar subtarea como completada
+ 
     public function completeSubtask(Request $request, $id)
-{
-    $subtask = Subtask::findOrFail($id);
-    $subtask->complete = $request->complete;
-    $subtask->save();
+    {
+        $subtask = Subtask::findOrFail($id);
+        $subtask->complete = $request->complete;
+        $subtask->save();
 
-    return response()->json(['success' => true]);
+        return response()->json(['success' => true]);
     }
 }
 

@@ -32,12 +32,12 @@ class TodolistController extends Controller
         return redirect()->route('home');
     }
 
-    public function complete($id)
+    public function complete(Request $request, $id)
     {
         $todolist = Todolist::findOrFail($id);
         $todolist->completed = !$todolist->completed;
         $todolist->save();
-
+    
         return response()->json(['success' => true]);
     }
 }

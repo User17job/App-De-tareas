@@ -7,17 +7,21 @@ use App\Http\Controllers\SubtaskController;
 Route::get('/', [TodolistController::class, 'index'])->name('home');
 Route::post('/todolists', [TodolistController::class, 'store'])->name('store');
 Route::delete('/todolists/{todolist}', [TodolistController::class, 'destroy'])->name('destroy');
-Route::patch('/todolists/{id}/complete', [TodolistController::class, 'complete'])->name('complete');
 
-// Route::get('/subtasks', [SubtaskController::class, 'index'])->name('index');  // Nueva ruta añadida
-// Route::post('/todolists/{id}/subtasks', [SubtaskController::class, 'store'])->name('subtasks.store');
-// Route::delete('/subtasks/{subtask}', [SubtaskController::class, 'destroy'])->name('destroy');
-// Route::patch('/subtasks/{id}/complete', [SubtaskController::class, 'complete'])->name('complete');
-    
+Route::patch('/todolists/{todolist}/complete', [TodolistController::class, 'complete'])->name('complete');
+
 
 Route::post('/subtask/{todolist_id}/store', [SubtaskController::class, 'storeSubtask'])->name('storeSubtask');
 Route::delete('/subtask/{id}', [SubtaskController::class, 'destroySubtask'])->name('destroySubtask');
-Route::post('/subtask/{id}/complete', [SubtaskController::class, 'completeSubtask']);
+
+Route::patch('/subtask/{id}/complete', [SubtaskController::class, 'completeSubtask'])->name('completeSubtask');
+
+
+
+
+
+// Route::patch('/todolists/{todolist}/complete', [TodolistController::class, 'complete'])->name('complete');
+// Route::post('/subtask/{id}/complete', [SubtaskController::class, 'completeSubtask']);
 
 // use App\Http\Controllers\TodolistController;
 // use App\Http\Controllers\SubtaskController;
